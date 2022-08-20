@@ -3,8 +3,11 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'dashboard-test';
+  isCollapsed = false;
+  onClickedButtonIcon(event: any) {
+    this.isCollapsed = event;
+  }
+  ngOnInit(): void {}
 }

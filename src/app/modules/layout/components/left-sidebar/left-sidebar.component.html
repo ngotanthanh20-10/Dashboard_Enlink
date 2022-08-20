@@ -1,0 +1,191 @@
+<nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+  <div class="side-nav" [ngClass]="{ 'side-nav-small': isCollapsed }">
+    <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li
+        nz-submenu
+        [(nzOpen)]="openMap.dashboard"
+        (nzOpenChange)="openHandler('dashboard', openMap)"
+        nzTitle="Dashboard"
+        nzIcon="dashboard"
+      >
+        <ul>
+          <li nz-menu-item nzSelected>
+            <a class="p-l-10" [routerLink]="router.DASHBOARD_MAIN">
+              <span>Default</span>
+            </a>
+          </li>
+          <li nz-menu-item>
+            <a class="p-l-10" [routerLink]="router.DASHBOARD_CRM">
+              <span>CRM</span>
+            </a>
+          </li>
+          <li nz-menu-item>
+            <a class="p-l-10" [routerLink]="router.DASHBOARD_ECOMMERCE">
+              <span>E-commerce</span>
+            </a>
+          </li>
+          <li nz-menu-item>
+            <a class="p-l-10" [routerLink]="router.DASHBOARD_PROJECTS">
+              <span>Projects</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li
+        nz-submenu
+        [(nzOpen)]="openMap.apps"
+        (nzOpenChange)="openHandler('apps', openMap)"
+        nzTitle="Apps"
+        nzIcon="appstore"
+      >
+        <ul>
+          <li nz-menu-item (click)="openHandler('chat', openMapApps)">
+            <span>Chat</span>
+          </li>
+          <li nz-menu-item (click)="openHandler('fileManager', openMapApps)">
+            <span>File Manager</span>
+          </li>
+          <li nz-menu-item (click)="openHandler('mail', openMapApps)">
+            <span>Mail</span>
+          </li>
+          <li
+            nz-submenu
+            [(nzOpen)]="openMapApps.projects"
+            (nzOpenChange)="openHandler('projects', openMapApps)"
+            nzTitle="Projects"
+          >
+            <ul>
+              <li nz-menu-item>
+                <span>Project List</span>
+              </li>
+              <li nz-menu-item>
+                <span>Project Details</span>
+              </li>
+            </ul>
+          </li>
+          <li
+            nz-submenu
+            [(nzOpen)]="openMapApps.ecommerce"
+            (nzOpenChange)="openHandler('ecommerce', openMapApps)"
+            nzTitle="E-commerce"
+          >
+            <ul>
+              <li nz-menu-item>
+                <span>Orders List</span>
+              </li>
+              <li nz-menu-item>
+                <span>Products</span>
+              </li>
+              <li nz-menu-item>
+                <span>Products List</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li
+        nz-submenu
+        [(nzOpen)]="openMap.components"
+        (nzOpenChange)="openHandler('components', openMap)"
+        nzTitle="Components"
+        nzIcon="layout"
+      >
+        <ul>
+          <li
+            nz-submenu
+            [(nzOpen)]="openMapComponents.general"
+            (nzOpenChange)="openHandler('general', openMapComponents)"
+            nzTitle="Components"
+          >
+            <ul>
+              <li nz-menu-item>
+                <span>Ant Grid</span>
+              </li>
+              <li nz-menu-item>
+                <span>Button</span>
+              </li>
+              <li nz-menu-item>
+                <span>Icon</span>
+              </li>
+              <li nz-menu-item>
+                <span>Typography</span>
+              </li>
+            </ul>
+          </li>
+          <li
+            nz-submenu
+            [(nzOpen)]="openMapComponents.navigation"
+            (nzOpenChange)="openHandler('navigation', openMapComponents)"
+            nzTitle="Navigation"
+          >
+            <ul>
+              <li nz-menu-item>
+                <span>Affix</span>
+              </li>
+              <li nz-menu-item>
+                <span>Breadcrumb</span>
+              </li>
+              <li nz-menu-item>
+                <span>Dropdown</span>
+              </li>
+              <li nz-menu-item>
+                <span>Menu</span>
+              </li>
+              <li nz-menu-item>
+                <span>Page Header</span>
+              </li>
+              <li nz-menu-item>
+                <span>Pagination</span>
+              </li>
+              <li nz-menu-item>
+                <span>Steps</span>
+              </li>
+            </ul>
+          </li>
+          <li
+            nz-submenu
+            [(nzOpen)]="openMapComponents.dataEntry"
+            (nzOpenChange)="openHandler('dataEntry', openMapComponents)"
+            nzTitle="Data Entry"
+          ></li>
+          <li
+            nz-submenu
+            [(nzOpen)]="openMapComponents.dataDisplay"
+            (nzOpenChange)="openHandler('dataDisplay', openMapComponents)"
+            nzTitle="Data Display"
+          ></li>
+          <li
+            nz-submenu
+            [(nzOpen)]="openMapComponents.feedback"
+            (nzOpenChange)="openHandler('feedback', openMapComponents)"
+            nzTitle="Feedback"
+          ></li>
+          <li
+            nz-submenu
+            [(nzOpen)]="openMapComponents.others"
+            (nzOpenChange)="openHandler('others', openMapComponents)"
+            nzTitle="Others"
+          ></li>
+        </ul>
+      </li>
+      <li nz-menu-item (click)="openHandler('charts', openMap)">
+        <i nz-icon nzType="pie-chart" nzTheme="outline"></i>
+        <span>Charts</span>
+      </li>
+      <li
+        nz-submenu
+        [(nzOpen)]="openMap.pages"
+        (nzOpenChange)="openHandler('pages', openMap)"
+        nzTitle="Pages"
+        nzIcon="file"
+      ></li>
+      <li
+        nz-submenu
+        [(nzOpen)]="openMap.authentication"
+        (nzOpenChange)="openHandler('authentication', openMap)"
+        nzTitle="Authentication"
+        nzIcon="lock"
+      ></li>
+    </ul>
+  </div>
+</nz-sider>

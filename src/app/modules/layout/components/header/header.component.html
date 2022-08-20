@@ -1,0 +1,56 @@
+<nz-header class="header">
+  <a
+    class="logo"
+    [ngClass]="{ 'logo-small': isCollapsed }"
+    routerLink="dashboard/default"
+  >
+    <div *ngIf="isCollapsed; then logoFold; else logo"></div>
+    <ng-template #logo>
+      <img src="assets/images/logo/logo.png" alt="logo" />
+    </ng-template>
+    <ng-template #logoFold>
+      <img src="assets/images/logo/logo-fold.png" alt="logo" />
+    </ng-template>
+  </a>
+  <div class="nav-wrap">
+    <div class="nav-left">
+      <div class="button-icon" (click)="onClickButtonIcon()">
+        <a>
+          <i
+            class="anticon anticon-menu-unfold"
+            nz-icon
+            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+          ></i>
+        </a>
+      </div>
+      <div class="button-icon">
+        <a>
+          <i
+            class="anticon anticon-menu-unfold"
+            nz-icon
+            nzType="search"
+            nzTheme="outline"
+          ></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <div class="button-icon">
+        <nz-badge [nzDot]="true">
+          <i nz-icon nzType="bell" nzTheme="outline"></i>
+        </nz-badge>
+      </div>
+      <div class="button-avatar">
+        <nz-avatar
+          nzSize="large"
+          nzIcon="user"
+          nzSrc="./assets/images/avatars/thumb-3.jpg"
+        ></nz-avatar>
+      </div>
+      <div class="button-icon">
+        <i nz-icon nzType="appstore" nzTheme="outline"></i>
+      </div>
+    </div>
+  </div>
+</nz-header>
