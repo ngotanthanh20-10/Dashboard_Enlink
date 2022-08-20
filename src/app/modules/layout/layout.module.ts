@@ -25,6 +25,8 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
 import {
   MenuFoldOutline,
   MenuUnfoldOutline,
@@ -75,7 +77,9 @@ const icons: IconDefinition[] = [
     NzTabsModule,
     NzDropDownModule,
     BrowserAnimationsModule,
-    NzDrawerModule
+    NzDrawerModule,
+    NzDividerModule,
+    NzRadioModule
     //#endregion
   ],
   exports: [

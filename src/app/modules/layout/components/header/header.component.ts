@@ -10,6 +10,16 @@ export class HeaderComponent implements OnInit {
   @Output() buttonClickedIcon: EventEmitter<boolean> =
     new EventEmitter<boolean>();
 
+  visible = false;
+
+  open(): void {
+    this.visible = true;
+  }
+
+  close(): void {
+    this.visible = false;
+  }
+
   onClickButtonIcon() {
     this.buttonClickedIcon.emit(!this.isCollapsed);
     this.isCollapsed = !this.isCollapsed;

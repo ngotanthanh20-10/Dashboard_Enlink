@@ -48,9 +48,31 @@
           nzSrc="./assets/images/avatars/thumb-3.jpg"
         ></nz-avatar>
       </div>
-      <div class="button-icon">
+      <div class="button-icon" (click)="open()">
         <i nz-icon nzType="appstore" nzTheme="outline"></i>
       </div>
+      <nz-drawer
+        [nzWidth]="280"
+        [nzClosable]="false"
+        [nzVisible]="visible"
+        nzPlacement="right"
+        nzTitle="Theme Config"
+        (nzOnClose)="close()"
+      >
+        <ng-container *nzDrawerContent>
+          <div class="DrawerContent">
+            <h4 class="m-b-0">Header Color</h4>
+            <p>Config header background color</p>
+            <div>
+              <nz-radio-group nzName="radiogroup" class="ant-radio-group color-selector ng-untouched ng-pristine ng-valid">
+                <label nz-radio nzValue="A"></label>
+                <label nz-radio nzValue="B"></label>
+                <label nz-radio nzValue="C"></label>
+              </nz-radio-group>
+            </div>
+          </div>
+        </ng-container>
+      </nz-drawer>
     </div>
   </div>
 </nz-header>
