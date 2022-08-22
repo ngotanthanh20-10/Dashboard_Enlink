@@ -1,1 +1,46 @@
-<p>right-sidebar works!</p>
+<nz-drawer
+  [nzWidth]="280"
+  [nzClosable]="false"
+  [nzVisible]="visible"
+  nzPlacement="right"
+  nzTitle="Theme Config"
+  (nzOnClose)="close()"
+>
+  <ng-container *nzDrawerContent>
+    <div class="DrawerContent">
+      <h4 class="m-b-0">Header Color</h4>
+      <p>Config header background color</p>
+      <div>
+        <nz-radio-group [(ngModel)]="radioValue" nzButtonStyle="outline">
+          <label nz-radio-button nzValue="default">White</label>
+          <label nz-radio-button nzValue="primary">Primary</label>
+          <label nz-radio-button nzValue="success">Success</label>
+          <label nz-radio-button nzValue="secondary">Secondary</label>
+          <label nz-radio-button nzValue="danger">Danger</label>
+        </nz-radio-group>
+      </div>
+      <div>
+        <nz-radio-group
+          nzName="radiogroup"
+          class="ant-radio-group color-selector ng-untouched ng-pristine ng-valid"
+        >
+          <nz-switch
+            [ngModel]="switchSidebar"
+            (ngModelChange)="onChangeColorSidebar()"
+          ></nz-switch>
+        </nz-radio-group>
+      </div>
+      <div>
+        <nz-radio-group
+          nzName="radiogroup"
+          class="ant-radio-group color-selector ng-untouched ng-pristine ng-valid"
+        >
+          <nz-switch
+            [ngModel]="isCollapsed"
+            (ngModelChange)="onClickButtonIcon()"
+          ></nz-switch>
+        </nz-radio-group>
+      </div>
+    </div>
+  </ng-container>
+</nz-drawer>

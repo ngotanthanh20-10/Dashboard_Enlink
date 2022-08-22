@@ -7,17 +7,15 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() isCollapsed = false;
+  @Input() visible = false;
   @Output() buttonClickedIcon: EventEmitter<boolean> =
     new EventEmitter<boolean>();
+  @Output() buttonClickOpenDrawer: EventEmitter<boolean> =
+    new EventEmitter<boolean>();
 
-  visible = false;
-
-  open(): void {
-    this.visible = true;
-  }
-
-  close(): void {
-    this.visible = false;
+  onClickOpenDrawer() {
+    this.buttonClickOpenDrawer.emit(!this.visible);
+    this.visible = !this.visible;
   }
 
   onClickButtonIcon() {

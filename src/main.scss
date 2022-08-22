@@ -94,6 +94,10 @@
   -ms-transition: all 0.2s ease;
 }
 
+.side-nav-bg-color {
+  background-color: #001529;
+}
+
 .side-nav-small {
   width: 80px !important;
 }
@@ -147,9 +151,9 @@
   padding: 0;
 }
 
-
 @media only screen and (min-width: 992px) and (max-width: 1440px) {
-  .header .logo, .side-nav {
+  .header .logo,
+  .side-nav {
     width: 230px;
   }
 }

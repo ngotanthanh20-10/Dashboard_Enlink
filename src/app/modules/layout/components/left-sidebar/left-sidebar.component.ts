@@ -8,6 +8,7 @@ import { AUTH_ROUTE } from 'src/app/enums';
 })
 export class LeftSidebarComponent implements OnInit {
   @Input() isCollapsed = false;
+  @Input() switchSidebar = false;
   router = AUTH_ROUTE
 
   openMap: { [name: string]: boolean } = {

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import {
   HeaderComponent,
   FooterComponent,
@@ -27,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import {
   MenuFoldOutline,
   MenuUnfoldOutline,
@@ -66,6 +68,8 @@ const icons: IconDefinition[] = [
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
+    BrowserAnimationsModule,
     //#region Ant design Import
     NzIconModule.forChild(icons),
     NzInputModule,
@@ -76,10 +80,10 @@ const icons: IconDefinition[] = [
     NzMenuModule,
     NzTabsModule,
     NzDropDownModule,
-    BrowserAnimationsModule,
     NzDrawerModule,
     NzDividerModule,
-    NzRadioModule
+    NzRadioModule,
+    NzSwitchModule
     //#endregion
   ],
   exports: [

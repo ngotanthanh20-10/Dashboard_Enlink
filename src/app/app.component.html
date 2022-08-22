@@ -1,11 +1,14 @@
 <nz-layout>
   <loy-dashboard-header
     [isCollapsed]="isCollapsed"
+    [visible]="visible"
     (buttonClickedIcon)="onClickedButtonIcon($event)"
+    (buttonClickOpenDrawer)="onClickOpenDrawer($event)"
   ></loy-dashboard-header>
   <nz-layout>
     <loy-dashboard-left-sidebar
       [isCollapsed]="isCollapsed"
+      [switchSidebar]="switchSidebar"
     ></loy-dashboard-left-sidebar>
     <nz-layout
       class="page-container"
@@ -18,3 +21,10 @@
     </nz-layout>
   </nz-layout>
 </nz-layout>
+<loy-dashboard-right-sidebar
+  [visible]="visible"
+  [switchSidebar]="switchSidebar"
+  [isCollapsed]="isCollapsed"
+    (buttonClickedIcon)="onClickedButtonIcon($event)"
+  (buttonChangeColor)="onChangeColorSidebar($event)"
+></loy-dashboard-right-sidebar>
