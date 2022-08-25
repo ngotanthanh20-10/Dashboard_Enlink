@@ -1,20 +1,21 @@
-<nz-header class="header">
+<nz-header class="header bg-{{ headerMode }} border-bottom-{{ headerMode }}">
   <a
-    class="logo"
+    class="logo border-right-{{ headerMode }}"
     [ngClass]="{ 'logo-small': isCollapsed }"
     routerLink="dashboard/default"
+    style="display: flex; align-items: center"
   >
-    <div *ngIf="isCollapsed; then logoFold; else logo"></div>
+    <ng-container *ngIf="isCollapsed; then logoFold; else logo"></ng-container>
     <ng-template #logo>
-      <img src="assets/images/logo/logo.png" alt="logo" />
+      <img style="height: 32px" src="assets/images/logo/logo.svg" alt="logo" />
     </ng-template>
     <ng-template #logoFold>
-      <img src="assets/images/logo/logo-fold.png" alt="logo" />
+      <img style="height: 32px" src="assets/images/logo/logo.svg" alt="logo" />
     </ng-template>
   </a>
   <div class="nav-wrap">
     <div class="nav-left">
-      <div class="button-icon" (click)="onClickButtonIcon()">
+      <div class="button-icon-{{headerMode}}" (click)="onClickButtonIcon()">
         <a>
           <i
             class="anticon anticon-menu-unfold"
@@ -23,32 +24,58 @@
           ></i>
         </a>
       </div>
-      <div class="button-icon">
+      <div class="button-icon-{{headerMode}}">
         <a>
           <i
             class="anticon anticon-menu-unfold"
             nz-icon
             nzType="search"
             nzTheme="outline"
+            (click)="open()"
           ></i>
+          <nz-drawer
+            [nzClosable]="false"
+            [nzVisible]="visibleLeft"
+            nzPlacement="left"
+            nzTitle="Search"
+            (nzOnClose)="close()"
+            [nzClosable]="true"
+          >
+            <ng-container *nzDrawerContent>
+              <loy-dashboard-header-search></loy-dashboard-header-search>
+            </ng-container>
+          </nz-drawer>
         </a>
       </div>
     </div>
 
     <div class="nav-right">
-      <div class="button-icon">
+      <div class="button-icon-{{headerMode}}">
         <nz-badge [nzDot]="true">
-          <i nz-icon nzType="bell" nzTheme="outline"></i>
+          <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+            <i nz-icon nzType="bell" nzTheme="outline"></i>
+          </a>
+          <nz-dropdown-menu #menu="nzDropdownMenu">
+            <loy-dashboard-notifications></loy-dashboard-notifications>
+          </nz-dropdown-menu>
         </nz-badge>
       </div>
-      <div class="button-avatar">
+      <div
+        class="button-avatar"
+        nz-dropdown
+        nzTrigger="click"
+        [nzDropdownMenu]="menuProfile"
+      >
         <nz-avatar
           nzSize="large"
           nzIcon="user"
           nzSrc="./assets/images/avatars/thumb-3.jpg"
         ></nz-avatar>
       </div>
-      <div class="button-icon" (click)="onClickOpenDrawer()">
+      <nz-dropdown-menu #menuProfile="nzDropdownMenu">
+        <loy-dashboard-user-profile></loy-dashboard-user-profile>
+      </nz-dropdown-menu>
+      <div class="button-icon-{{headerMode}}" (click)="onClickOpenDrawer()">
         <i nz-icon nzType="appstore" nzTheme="outline"></i>
       </div>
     </div>

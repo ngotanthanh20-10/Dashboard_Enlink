@@ -1,7 +1,8 @@
 <nz-layout>
   <loy-dashboard-header
     [isCollapsed]="isCollapsed"
-    [visible]="visible"
+    [visible]="visibleRight"
+    [headerMode]="headerMode"
     (buttonClickedIcon)="onClickedButtonIcon($event)"
     (buttonClickOpenDrawer)="onClickOpenDrawer($event)"
   ></loy-dashboard-header>
@@ -22,9 +23,98 @@
   </nz-layout>
 </nz-layout>
 <loy-dashboard-right-sidebar
-  [visible]="visible"
+  [visible]="visibleRight"
   [switchSidebar]="switchSidebar"
   [isCollapsed]="isCollapsed"
-    (buttonClickedIcon)="onClickedButtonIcon($event)"
+  [headerMode]="headerMode"
+  (buttonClickedIcon)="onClickedButtonIcon($event)"
   (buttonChangeColor)="onChangeColorSidebar($event)"
+  (buttonChangeModeHeader)="onChangeModeHeader($event)"
 ></loy-dashboard-right-sidebar>
+<!-- <h2>DASHBOARD</h2>
+<div nz-row>
+  <div nz-col nzSpan="12" style="padding: 12px; border-radius: 10px;">
+    <nz-progress style="margin-right:10px" [nzPercent]="75" nzType="circle"></nz-progress>
+    <nz-progress style="margin-right:10px"  [nzPercent]="70" nzType="circle" nzStatus="exception"></nz-progress>
+    <nz-progress [nzPercent]="100" nzType="circle"></nz-progress>
+  </div>
+
+  <div nz-col nzSpan="12" style="background-color: #fff; padding: 12px; border-radius: 10px;">
+      <nz-progress [nzPercent]="30" nzSize="small"></nz-progress>
+      <nz-progress [nzPercent]="50" nzSize="small" nzStatus="active"></nz-progress>
+      <nz-progress [nzPercent]="70" nzSize="small" nzStatus="exception"></nz-progress>
+      <nz-progress [nzPercent]="100" nzSize="small"></nz-progress>
+      <nz-progress [nzPercent]="50" nzSize="small" [nzShowInfo]="false"></nz-progress>
+  </div>
+
+  <div nz-col nzSpan="12" style="margin-top: 10px; background-color: #fff; padding: 12px; border-radius: 10px;">
+    <nz-timeline>
+      <nz-timeline-item nzColor="green">Create a services site 2015-09-01</nz-timeline-item>
+      <nz-timeline-item nzColor="green">Solve initial network problems 2015-09-01</nz-timeline-item>
+      <nz-timeline-item nzColor="red">
+        <p>Solve initial network problems 1</p>
+        <p>Solve initial network problems 2</p>
+        <p>Solve initial network problems 3 2015-09-01</p>
+      </nz-timeline-item>
+      <nz-timeline-item>
+        <p>Technical testing 1</p>
+        <p>Technical testing 2</p>
+        <p>Technical testing 3 2015-09-01</p>
+      </nz-timeline-item>
+      <nz-timeline-item nzColor="gray">
+        <p>Technical testing 1</p>
+        <p>Technical testing 2</p>
+        <p>Technical testing 3 2015-09-01</p>
+      </nz-timeline-item>
+      <nz-timeline-item nzColor="gray">
+        <p>Technical testing 1</p>
+        <p>Technical testing 2</p>
+        <p>Technical testing 3 2015-09-01</p>
+      </nz-timeline-item>
+    </nz-timeline>
+  </div>
+
+  <div nz-col nzSpan="12" style="margin-top: 10px;padding: 12px; border-radius: 10px;">
+    <div style="background: #ECECEC; padding: 30px;">
+      <nz-row [nzGutter]="16">
+        <nz-col [nzSpan]="12">
+          <nz-card>
+            <nz-statistic
+              [nzValue]="(11.28 | number: '1.0-2')!"
+              [nzTitle]="'Active'"
+              [nzPrefix]="prefixTplOne"
+              [nzSuffix]="'%'"
+              [nzValueStyle]="{ color: '#3F8600' }"
+            ></nz-statistic>
+            <ng-template #prefixTplOne><i nz-icon nzType="arrow-up"></i></ng-template>
+          </nz-card>
+        </nz-col>
+        <nz-col [nzSpan]="12">
+          <nz-card>
+            <nz-statistic
+              [nzValue]="(9.3 | number: '1.0-2')!"
+              [nzTitle]="'Idle'"
+              [nzPrefix]="prefixTplTwo"
+              [nzSuffix]="'%'"
+              [nzValueStyle]="{ color: '#CF1322' }"
+            ></nz-statistic>
+            <ng-template #prefixTplTwo><i nz-icon nzType="arrow-down"></i></ng-template>
+          </nz-card>
+        </nz-col>
+      </nz-row>
+
+
+      <nz-row [nzGutter]="16" style="margin: 10px 30px; background-color: #ECECEC; padding: 30px; border-radius: 10px;">
+        <nz-col [nzSpan]="12">
+          <nz-countdown [nzValue]="12" [nzTitle]="'Countdown'"></nz-countdown>
+        </nz-col>
+        <nz-col [nzSpan]="12">
+          <nz-countdown [nzValue]="134" [nzTitle]="'Million Seconds'" [nzFormat]="'HH:mm:ss:SSS'"></nz-countdown>
+        </nz-col>
+      </nz-row>
+    </div>
+
+  </div>
+</div> -->
+
+<!-- <router-outlet></router-outlet> -->

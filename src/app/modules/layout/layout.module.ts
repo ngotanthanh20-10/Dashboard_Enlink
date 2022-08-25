@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import {
   HeaderComponent,
@@ -22,24 +23,30 @@ import { IconDefinition } from '@ant-design/icons-angular';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
+
 import {
+  AppstoreOutline,
+  BellOutline,
+  DashboardOutline,
+  FileOutline,
+  LayoutOutline,
+  LockOutline,
   MenuFoldOutline,
   MenuUnfoldOutline,
-  BellOutline,
-  AppstoreOutline,
-  DashboardOutline,
   PieChartOutline,
-  FileOutline,
-  LockOutline,
-  LayoutOutline,
+  UserOutline,
+  BarChartOutline,
+  LogoutOutline,
 } from '@ant-design/icons-angular/icons';
+import { NotificationItemComponent } from './components/notifications/components/notification-item/notification-item.component';
 //#endregion
 
 const icons: IconDefinition[] = [
@@ -52,6 +59,9 @@ const icons: IconDefinition[] = [
   FileOutline,
   LockOutline,
   LayoutOutline,
+  UserOutline,
+  BarChartOutline,
+  LogoutOutline,
 ];
 
 @NgModule({
@@ -64,12 +74,13 @@ const icons: IconDefinition[] = [
     LayoutModalComponent,
     NotificationsComponent,
     HeaderSearchComponent,
+    NotificationItemComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule,
     BrowserAnimationsModule,
+    FormsModule,
     //#region Ant design Import
     NzIconModule.forChild(icons),
     NzInputModule,
@@ -80,10 +91,12 @@ const icons: IconDefinition[] = [
     NzMenuModule,
     NzTabsModule,
     NzDropDownModule,
+    NzListModule,
+    NzSpinModule,
     NzDrawerModule,
     NzDividerModule,
     NzRadioModule,
-    NzSwitchModule
+    NzSwitchModule,
     //#endregion
   ],
   exports: [
@@ -95,6 +108,7 @@ const icons: IconDefinition[] = [
     LayoutModalComponent,
     NotificationsComponent,
     HeaderSearchComponent,
+    NotificationItemComponent,
   ],
 })
 export class LayoutModule {}

@@ -1,0 +1,62 @@
+<div>
+  <nz-row [nzGutter]="[16, 16]">
+    <nz-col
+      [nzXs]="{ span: 24 }"
+      [nzLg]="{ span: 16 }"
+      [nzMd]="{ span: 16 }"
+      [nzSm]="{ span: 24 }"
+    >
+      <nz-card>
+        <div
+          class="d-flex justify-content-between align-items-center ng-star-inserted"
+        >
+          <h5>Top Product</h5>
+          <div>
+            <a
+              nz-button=""
+              nztype="default"
+              nzsize="small"
+              class="ant-btn ant-btn-sm loy-view-all"
+              ><span class="ng-star-inserted">View All</span></a
+            >
+          </div>
+        </div>
+        <div class="m-t-30 ng-star-inserted">
+          <div class="loy-top-product-table">
+            <nz-table
+              #basicTable
+              [nzData]="listOfData"
+              [nzFrontPagination]="false"
+            >
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Sales</th>
+                  <th>Earning</th>
+                  <th>Stock Left</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of basicTable.data">
+                  <td>
+                    <img class="product-img" src="{{ data.image }}" />
+                    <span>{{ data.Product }}</span>
+                  </td>
+                  <td>{{ data.Sales }}</td>
+                  <td>{{ data.Earning }}</td>
+                  <td>
+                    <nz-progress
+                      [nzStrokeWidth]="4"
+                      [nzPercent]="data.StockLeft"
+                      [nzStrokeColor]="data.color"
+                    ></nz-progress>
+                  </td>
+                </tr>
+              </tbody>
+            </nz-table>
+          </div>
+        </div>
+      </nz-card>
+    </nz-col>
+  </nz-row>
+</div>

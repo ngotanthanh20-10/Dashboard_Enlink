@@ -1,0 +1,1 @@
+export interface data { name: string; age: number; address: string }

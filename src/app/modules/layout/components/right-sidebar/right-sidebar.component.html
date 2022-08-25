@@ -7,39 +7,43 @@
   (nzOnClose)="close()"
 >
   <ng-container *nzDrawerContent>
-    <div class="DrawerContent">
+    <div class="m-b-30 drawer-content">
       <h4 class="m-b-0">Header Color</h4>
       <p>Config header background color</p>
-      <div>
-        <nz-radio-group [(ngModel)]="radioValue" nzButtonStyle="outline">
-          <label nz-radio-button nzValue="default">White</label>
-          <label nz-radio-button nzValue="primary">Primary</label>
-          <label nz-radio-button nzValue="success">Success</label>
-          <label nz-radio-button nzValue="secondary">Secondary</label>
-          <label nz-radio-button nzValue="danger">Danger</label>
+      <div class="right-radio">
+        <nz-radio-group
+          [(ngModel)]="headerMode"
+          nzButtonStyle="outline"
+          (ngModelChange)="onChangeModeHeader(headerMode)"
+        >
+          <label nz-radio nzValue="white">White</label>
+          <label nz-radio nzValue="primary">Primary</label>
+          <label nz-radio nzValue="success">Success</label>
+          <label nz-radio nzValue="secondary">Secondary</label>
+          <label nz-radio nzValue="danger">Danger</label>
         </nz-radio-group>
       </div>
+    </div>
+    <nz-divider></nz-divider>
+    <div class="m-b-30 drawer-content">
+      <h4 class="m-b-0">Side Nav Dark</h4>
+      <p>Change Side Nav to dark</p>
       <div>
-        <nz-radio-group
-          nzName="radiogroup"
-          class="ant-radio-group color-selector ng-untouched ng-pristine ng-valid"
-        >
-          <nz-switch
-            [ngModel]="switchSidebar"
-            (ngModelChange)="onChangeColorSidebar()"
-          ></nz-switch>
-        </nz-radio-group>
+        <nz-switch
+          [ngModel]="switchSidebar"
+          (ngModelChange)="onChangeColorSidebar()"
+        ></nz-switch>
       </div>
+    </div>
+    <nz-divider></nz-divider>
+    <div class="m-b-30 drawer-content">
+      <h4 class="m-b-0">Folded Menu</h4>
+      <p>Toggle Folded Menu</p>
       <div>
-        <nz-radio-group
-          nzName="radiogroup"
-          class="ant-radio-group color-selector ng-untouched ng-pristine ng-valid"
-        >
-          <nz-switch
-            [ngModel]="isCollapsed"
-            (ngModelChange)="onClickButtonIcon()"
-          ></nz-switch>
-        </nz-radio-group>
+        <nz-switch
+          [ngModel]="isCollapsed"
+          (ngModelChange)="onClickButtonIcon()"
+        ></nz-switch>
       </div>
     </div>
   </ng-container>

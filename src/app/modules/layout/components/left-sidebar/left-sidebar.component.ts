@@ -9,7 +9,7 @@ import { AUTH_ROUTE } from 'src/app/enums';
 export class LeftSidebarComponent implements OnInit {
   @Input() isCollapsed = false;
   @Input() switchSidebar = false;
-  router = AUTH_ROUTE
+  router = AUTH_ROUTE;
 
   openMap: { [name: string]: boolean } = {
     dashboard: true,
@@ -36,12 +36,10 @@ export class LeftSidebarComponent implements OnInit {
     feedback: false,
     others: false,
   };
-
+  
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(AUTH_ROUTE);
-  }
+  ngOnInit(): void {}
 
   openHandler(value: string, arr: { [name: string]: boolean }): void {
     for (const key in arr) {

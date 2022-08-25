@@ -1,6 +1,17 @@
 <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
-  <div class="side-nav" [ngClass]="{ 'side-nav-small': isCollapsed, 'side-nav-bg-color': switchSidebar }">
-    <ul nz-menu nzMode="inline" [nzTheme]="switchSidebar ? 'dark' : 'light'" >
+  <div
+    class="side-nav"
+    [ngClass]="{
+      'side-nav-small': isCollapsed,
+      'side-nav-bg-color': switchSidebar
+    }"
+  >
+    <ul
+      nz-menu
+      [nzTheme]="switchSidebar ? 'dark' : 'light'"
+      nzMode="inline"
+      [nzInlineCollapsed]="isCollapsed"
+    >
       <li
         nz-submenu
         [(nzOpen)]="openMap.dashboard"

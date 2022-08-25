@@ -6,18 +6,26 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isCollapsed = false;
-  visible = false;
+  visibleRight = false;
   switchSidebar = false;
+  headerMode = 'white';
+  dropdownProfile = '';
+
+  onChangeModeHeader(event: any) {
+    this.headerMode = event;
+  }
+
   onClickedButtonIcon(event: any) {
     this.isCollapsed = event;
   }
 
   onClickOpenDrawer(event: any) {
-    this.visible = event;
+    this.visibleRight = event;
   }
 
   onChangeColorSidebar(event: any) {
     this.switchSidebar = event;
   }
+
   ngOnInit(): void {}
 }

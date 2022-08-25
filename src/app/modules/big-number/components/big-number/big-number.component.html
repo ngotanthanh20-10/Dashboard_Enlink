@@ -1,0 +1,13 @@
+<div>
+  <nz-row [nzGutter]="[enumBigNumber, enumBigNumber]">
+    <nz-col
+      [nzXs]="{ span: 24 }"
+      [nzLg]="{ span: 6 }"
+      [nzMd]="{ span: 12 }"
+      [nzSm]="{ span: 24 }"
+      *ngFor="let data of bigNumberList"
+    >
+      <loy-dashboard-card-number [data]="data"></loy-dashboard-card-number>
+    </nz-col>
+  </nz-row>
+</div>
