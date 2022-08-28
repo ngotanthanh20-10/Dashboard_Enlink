@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AUTH_ROUTE } from './enums';
 import { MainComponent } from './modules/dashboard-main/main.component';
-import { TableComponent } from './modules/table/components/table/table.component';
+import { ListMemberComponent } from './modules/table/components/list-member/list-member.component';
 
 const routes: Routes = [
   {
@@ -26,10 +26,8 @@ const routes: Routes = [
   {
     path: AUTH_ROUTE.DASHBOARD_CRM,
     loadChildren: () =>
-      import('./modules/table/table.module').then(
-        (t) => t.TableModule
-      ),
-    component: TableComponent,
+      import('./modules/table/table.module').then((t) => t.TableModule),
+    component: ListMemberComponent,
   },
   {
     path: AUTH_ROUTE.DASHBOARD_ECOMMERCE,
@@ -46,7 +44,7 @@ const routes: Routes = [
         (t) => t.DashboardMainModule
       ),
     component: MainComponent,
-  }
+  },
 ];
 
 @NgModule({

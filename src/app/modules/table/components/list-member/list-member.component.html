@@ -1,0 +1,25 @@
+<app-filter-list-member></app-filter-list-member>
+<nz-table
+  #fixedTable
+  [nzData]="listOfData"
+  [nzScroll]="{ x: '1000px', y: '240px' }"
+>
+  <thead>
+    <tr>
+      <th *ngFor="let i of titleTable">
+        {{ i }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of fixedTable.data">
+      <td>{{ data.name }}</td>
+      <td>{{ data.age }}</td>
+      <td>{{ data.checked }}</td>
+      <td>{{ data.address }}</td>
+      <td>{{ data.expand }}</td>
+      <td>{{ data.description }}</td>
+      <td>{{ data.disabled }}</td>
+    </tr>
+  </tbody>
+</nz-table>
